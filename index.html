@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Helmet IoT Safety Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="iot.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="icon-bookmark" viewBox="0 0 24 24">
+      <path d="M6 3h12v18l-6-4-6 4V3z"></path>
+    </symbol>
+    <symbol id="icon-cart" viewBox="0 0 24 24">
+      <path d="M3 4h2l2.2 10.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 1.9-1.4L21 7H7"></path>
+      <circle cx="10" cy="20" r="1.5"></circle>
+      <circle cx="18" cy="20" r="1.5"></circle>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6L6 18"></path>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6"></path>
+    </symbol>
+    <symbol id="icon-cloud" viewBox="0 0 24 24">
+      <path d="M17.5 19H8a5 5 0 0 1-.8-9.9 6 6 0 0 1 11.2 2.3A3.8 3.8 0 0 1 17.5 19z"></path>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Smart Helmet IoT">
+      <img class="brand-logo" src="assets/smart-helmet-logo.png" alt="Logo Smart Helmet IoT">
+      <span>Smart Helmet IoT</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a href="#prototype">Prototype</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#paket">Paket</a>
+      <a href="#alur">Alur</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" type="button" aria-label="Buka daftar wishlist kecil" data-open-wishlist>
+        <svg><use href="#icon-bookmark"></use></svg>
+        <span class="badge" data-wishlist-count>0</span>
+      </button>
+      <button class="icon-button" type="button" aria-label="Buka keranjang" data-open-cart>
+        <svg><use href="#icon-cart"></use></svg>
+        <span class="badge" data-cart-count>0</span>
+      </button>
+      <div class="wishlist-popover" id="wishlistPopover" aria-label="Daftar wishlist singkat">
+        <h3>Wishlist</h3>
+        <div id="wishlistPopoverList" class="mini-list"></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="prototype">
+      <div class="hero-content">
+        <p class="eyebrow">Prototype Smart Helmet Berbasis IoT</p>
+        <h1>Helm pintar untuk risiko kerja konstruksi.</h1>
+        <p class="hero-copy">
+          Helm proyek pasif menjadi wearable IoT untuk memantau gerak, lokasi, suhu, dan gas berbahaya.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-button" href="#paket">Lihat Paket</a>
+          <a class="secondary-button" href="#fitur">Lihat Sistem</a>
+        </div>
+
+      </div>
+
+      <div class="media-showcase" aria-label="Display video prototype smart helmet">
+        <div class="video-silhouette">
+          <video src="assets/smart-helmet-main.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+        </div>
+        <div class="video-strip">
+          <video src="assets/smart-helmet-detail.mp4" autoplay muted loop playsinline disablepictureinpicture></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section statement-section">
+      <div class="section-heading">
+        <p class="eyebrow">Masalah</p>
+        <h2>Kecelakaan konstruksi tinggi, pengawasan K3 terbatas, dan banyak bahaya tidak terlihat.</h2>
+      </div>
+      <div class="statement-grid">
+        <article class="problem-card">
+          <span class="problem-number">01</span>
+          <h3>Risiko jatuh</h3>
+          <p>Jatuh dari ketinggian dan benturan masih menjadi risiko utama pekerja proyek.</p>
+        </article>
+        <article class="problem-card">
+          <span class="problem-number">02</span>
+          <h3>Blind spot</h3>
+          <p>Area proyek luas membuat SOP SMK3 sulit diawasi secara penuh.</p>
+        </article>
+        <article class="problem-card">
+          <span class="problem-number">03</span>
+          <h3>Bahaya lingkungan</h3>
+          <p>Suhu ekstrem dan gas beracun bisa terlambat terdeteksi.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split-section" id="fitur">
+      <div>
+        <p class="eyebrow">Fitur inti</p>
+        <h2>Satu helm untuk deteksi fisik, lokasi, suhu, gas, dan notifikasi darurat.</h2>
+      </div>
+      <div class="feature-list">
+        <article class="feature-card">
+          <img class="feature-image" src="assets/mpu6050.png" alt="Sensor IMU MPU6050">
+          <span class="feature-icon">01</span>
+          <h3>IMU MPU6050</h3>
+          <p>Mendeteksi jatuh, benturan, dan perubahan orientasi kepala.</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-image" src="assets/gps.png" alt="Modul GPS">
+          <span class="feature-icon">02</span>
+          <h3>GPS</h3>
+          <p>Melacak posisi pekerja di area proyek luas.</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-image" src="assets/dht11.png" alt="Sensor DHT11">
+          <span class="feature-icon">03</span>
+          <h3>DHT11</h3>
+          <p>Membaca suhu ekstrem yang berisiko memicu heatstroke.</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-image" src="assets/mq2.png" alt="Sensor MQ-2">
+          <span class="feature-icon">04</span>
+          <h3>MQ-2</h3>
+          <p>Mendeteksi gas berbahaya di galian atau ruang terbatas.</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-image" src="assets/esp32.png" alt="Mikrokontroler ESP32">
+          <span class="feature-icon">05</span>
+          <h3>ESP32</h3>
+          <p>Memproses data sensor dan membaca anomali keselamatan.</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-image" src="assets/lora.png" alt="Modul LoRa">
+          <span class="feature-icon">06</span>
+          <h3>LoRa</h3>
+          <p>Mengirim data jarak jauh dengan konsumsi daya rendah.</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-image" src="assets/lithium-ion.png" alt="Baterai lithium ion">
+          <span class="feature-icon">07</span>
+          <h3>Baterai Lithium Ion</h3>
+          <p>Menyuplai daya portabel untuk sensor, ESP32, dan LoRa selama pemakaian lapangan.</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-image" src="assets/ip67-enclosure.png" alt="Waterproof IP67 enclosure box">
+          <span class="feature-icon">08</span>
+          <h3>IP67 Enclosure Box</h3>
+          <p>Melindungi rangkaian elektronik dari debu, percikan, dan kondisi kerja luar ruangan.</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-image" src="assets/torque-spring-clip.png" alt="Klip pegas torsi tinggi">
+          <span class="feature-icon">09</span>
+          <h3>Klip Pegas Torsi Tinggi</h3>
+          <p>Mengunci modul ke helm agar kuat, stabil, dan tetap mudah dilepas saat servis.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section iot-flow-section">
+      <div class="section-heading">
+        <p class="eyebrow">Implementasi IoT</p>
+        <h2>Semua komponen bekerja dalam satu rangkaian: modul terpasang di helm, sensor membaca data, ESP32 memproses, LoRa mengirim, lalu cloud menampilkan dashboard.</h2>
+      </div>
+      <div class="workflow">
+        <article class="workflow-card hardware-card">
+          <span>01</span>
+          <div class="sensor-collage" aria-label="Kolase komponen mekanik dan daya">
+            <img src="assets/ip67-enclosure.png" alt="Waterproof IP67 enclosure box">
+            <img src="assets/lithium-ion.png" alt="Baterai lithium ion">
+            <img src="assets/torque-spring-clip.png" alt="Klip pegas torsi tinggi">
+            <img src="assets/smart-helmet-logo.png" alt="Smart Helmet IoT">
+          </div>
+          <h3>Modul helm</h3>
+          <p>Enclosure IP67, baterai, dan klip pegas membuat modul terlindungi, bertenaga, dan kokoh.</p>
+        </article>
+        <div class="flow-arrow"><svg><use href="#icon-arrow"></use></svg></div>
+        <article class="workflow-card sensor-card">
+          <span>02</span>
+          <div class="sensor-collage" aria-label="Kolase sensor">
+            <img src="assets/mpu6050.png" alt="Sensor MPU6050">
+            <img src="assets/gps.png" alt="Modul GPS">
+            <img src="assets/dht11.png" alt="Sensor DHT11">
+            <img src="assets/mq2.png" alt="Sensor MQ-2">
+          </div>
+          <h3>Sensor</h3>
+          <p>MPU6050, GPS, DHT11, dan MQ-2 membaca gerak, lokasi, suhu, dan gas.</p>
+        </article>
+        <div class="flow-arrow"><svg><use href="#icon-arrow"></use></svg></div>
+        <article class="workflow-card">
+          <span>03</span>
+          <img class="component-image" src="assets/esp32.png" alt="ESP32">
+          <h3>ESP32</h3>
+          <p>Mengolah data dan mendeteksi anomali.</p>
+        </article>
+        <div class="flow-arrow"><svg><use href="#icon-arrow"></use></svg></div>
+        <article class="workflow-card">
+          <span>04</span>
+          <img class="component-image" src="assets/lora.png" alt="Modul LoRa">
+          <h3>LoRa</h3>
+          <p>Mengirim data jarak jauh dan hemat daya.</p>
+        </article>
+        <div class="flow-arrow"><svg><use href="#icon-arrow"></use></svg></div>
+        <article class="workflow-card">
+          <span>05</span>
+          <div class="cloud-mark"><svg><use href="#icon-cloud"></use></svg></div>
+          <h3>Dashboard</h3>
+          <p>Safety Officer memantau status pekerja.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section package-section" id="paket">
+      <div class="section-heading">
+        <p class="eyebrow">Paket produk</p>
+        <h2>Pilih paket dari kartu produk. Pembelian utama dilakukan lewat popup paket.</h2>
+      </div>
+
+      <div class="market-grid">
+        <article class="market-card" data-package-card="full">
+          <button class="card-icon top-right" type="button" aria-label="Tambah Smart Helmet Prototype ke wishlist" data-wishlist-package="full">
+            <svg><use href="#icon-bookmark"></use></svg>
+          </button>
+          <div class="package-photo">
+            <img src="assets/smart-helmet-logo.png" alt="Placeholder foto paket Smart Helmet Prototype">
+          </div>
+          <div class="market-body">
+            <p class="package-tag">Produk utama</p>
+            <h3>Smart Helmet Prototype</h3>
+            <p>Helm pintar dengan IMU, GPS, DHT11, MQ-2, ESP32, dan LoRa.</p>
+            <strong>Rp 600.000</strong>
+          </div>
+          <div class="market-actions">
+            <button class="secondary-button icon-text" type="button" data-cart-package="full">
+              <svg><use href="#icon-cart"></use></svg>
+              Keranjang
+            </button>
+            <button class="primary-button" type="button" data-open-package="full">Detail</button>
+          </div>
+        </article>
+
+        <article class="market-card" data-package-card="service">
+          <button class="card-icon top-right" type="button" aria-label="Tambah Smart Helmet Prototype+ ke wishlist" data-wishlist-package="service">
+            <svg><use href="#icon-bookmark"></use></svg>
+          </button>
+          <div class="package-photo plus-photo">
+            <span class="plus-mark">+</span>
+            <img src="assets/smart-helmet-logo.png" alt="Placeholder foto paket Smart Helmet Prototype Plus">
+          </div>
+          <div class="market-body">
+            <p class="package-tag">Produk plus jasa</p>
+            <h3>Smart Helmet Prototype+</h3>
+            <p>Paket prototype ditambah tutorial dan jasa koneksi dashboard perusahaan.</p>
+            <strong>Rp 1.000.000</strong>
+          </div>
+          <div class="market-actions">
+            <button class="secondary-button icon-text" type="button" data-cart-package="service">
+              <svg><use href="#icon-cart"></use></svg>
+              Keranjang
+            </button>
+            <button class="primary-button" type="button" data-open-package="service">Detail</button>
+          </div>
+        </article>
+      </div>
+      <div class="promo-panel package-promo">
+        <div>
+          <p class="eyebrow">Kerja sama CV/PT</p>
+          <h2>Diskon tersedia untuk perusahaan yang bekerja sama.</h2>
+          <p>Diskusikan kebutuhan proyek, jumlah unit, integrasi dashboard, dan harga kerja sama melalui 081296636418.</p>
+        </div>
+        <a class="primary-button" href="https://wa.me/6281296636418">Hubungi 081296636418</a>
+      </div>
+    </section>
+
+    <section class="section order-section" id="alur">
+      <div class="section-heading">
+        <p class="eyebrow">Cara beli</p>
+        <h2>Pilih paket, masukkan keranjang atau wishlist, lalu bayar via QRIS.</h2>
+      </div>
+      <div class="order-steps">
+        <article>
+          <span>1</span>
+          <h3>Pilih paket</h3>
+          <p>Buka detail paket untuk melihat isi, kuantitas, dan pembayaran.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Atur ongkir</h3>
+          <p>Ongkir dipilih saat checkout: Pulau Jawa atau Luar Jawa.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Checkout</h3>
+          <p>QRIS muncul setelah checkout, lalu tombol konfirmasi aktif setelah 5 detik.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="packageModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-dialog product-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="Tutup popup" data-close-modal>
+        <svg><use href="#icon-close"></use></svg>
+      </button>
+      <div class="modal-product-image">
+        <img id="modalImage" src="assets/smart-helmet-logo.png" alt="Foto paket Smart Helmet">
+      </div>
+      <div class="modal-content">
+        <p class="package-tag" id="modalTag">Produk</p>
+        <h2 id="modalTitle">Judul paket</h2>
+        <p id="modalDescription">Deskripsi paket.</p>
+        <strong class="modal-price" id="modalPrice">Rp 0</strong>
+
+        <label for="modalQuantity">Kuantitas</label>
+        <div class="quantity-control compact">
+          <button type="button" data-modal-qty="minus" aria-label="Kurangi jumlah">-</button>
+          <input id="modalQuantity" type="number" min="1" max="20" value="1">
+          <button type="button" data-modal-qty="plus" aria-label="Tambah jumlah">+</button>
+        </div>
+
+        <div class="payment-note">
+          <strong>Pembayaran QRIS</strong>
+          <span>Pilih ongkir di keranjang sebelum QRIS muncul.</span>
+        </div>
+
+        <div class="modal-actions">
+          <button class="secondary-button icon-text" type="button" data-modal-wishlist>
+            <svg><use href="#icon-bookmark"></use></svg>
+            Wishlist
+          </button>
+          <button class="secondary-button icon-text" type="button" data-modal-cart>
+            <svg><use href="#icon-cart"></use></svg>
+            Keranjang
+          </button>
+          <button class="primary-button" type="button" data-modal-buy>Lanjut Checkout</button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="modal" id="cartModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-dialog list-dialog" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
+      <button class="modal-close" type="button" aria-label="Tutup keranjang" data-close-modal>
+        <svg><use href="#icon-close"></use></svg>
+      </button>
+      <h2 id="cartModalTitle">Keranjang</h2>
+      <div id="cartModalList" class="mini-list"></div>
+      <label class="modal-label" for="shippingRegion">Ongkir</label>
+      <select id="shippingRegion">
+        <option value="java">Pulau Jawa - Rp 35.000</option>
+        <option value="outside">Luar Jawa - Rp 75.000</option>
+      </select>
+      <div class="summary-total">
+        <span>Total</span>
+        <strong id="cartModalTotal">Rp 0</strong>
+      </div>
+      <button class="primary-button full-button" type="button" data-checkout-all>Checkout Semua Paket</button>
+    </article>
+  </div>
+
+  <div class="modal" id="wishlistModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-dialog list-dialog" role="dialog" aria-modal="true" aria-labelledby="wishlistModalTitle">
+      <button class="modal-close" type="button" aria-label="Tutup wishlist" data-close-modal>
+        <svg><use href="#icon-close"></use></svg>
+      </button>
+      <h2 id="wishlistModalTitle">Wishlist</h2>
+      <div id="wishlistModalList" class="mini-list"></div>
+    </article>
+  </div>
+
+  <div class="modal" id="qrisModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-dialog qris-dialog" role="dialog" aria-modal="true" aria-labelledby="qrisModalTitle">
+      <button class="modal-close" type="button" aria-label="Tutup QRIS" data-close-modal>
+        <svg><use href="#icon-close"></use></svg>
+      </button>
+      <p class="eyebrow">Pembayaran QRIS</p>
+      <h2 id="qrisModalTitle">Scan QRIS untuk membayar</h2>
+      <img class="qris-image" id="qrisImage" src="assets/qris-payment.jpeg" alt="QRIS pembayaran">
+      <p class="qris-missing" id="qrisMissing">Simpan gambar QRIS ke <strong>assets/qris-payment.jpeg</strong> agar kode pembayaran tampil di sini.</p>
+      <p class="qris-total">Total: <strong id="qrisTotal">Rp 0</strong></p>
+      <button class="primary-button full-button" type="button" data-confirm-payment disabled>Konfirmasi Pembayaran (5)</button>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <p>Smart Helmet IoT Safety Prototype</p>
+    <a href="#top">Kembali ke atas</a>
+  </footer>
+
+  <script src="iot.js"></script>
+</body>
+</html>
