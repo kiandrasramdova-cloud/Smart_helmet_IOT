@@ -329,7 +329,7 @@ h3 {
   min-height: 330px;
 }
 
-.video-silhouette::before {
+/* .video-silhouette::before {
   position: absolute;
   inset: 8%;
   z-index: 0;
@@ -339,7 +339,7 @@ h3 {
     0 0 0 42px rgba(255, 157, 24, 0.06),
     0 0 90px rgba(33, 212, 253, 0.18);
   content: "";
-}
+} */
 
 .video-silhouette video,
 .video-strip video {
